@@ -15,3 +15,4 @@
 * UM-B-025 DA14580/581/583 Bluetooth Smart development kit - Basic: Dialog Semiconductor
 * DA14580/murata module PCBs(Git repository): github.com/K4zuki/da14580
 * TypeZY (LBCA2HNZYZ) Bluetooth® Smart Module: Murata Manufucturing Co.,Ltd.
+* mbed: mbed.org
