@@ -7,3 +7,7 @@ BLE(BLでは*なく*！)に興味があるけどよく知らない方々(なに�
 
 ## 注意事項
 本文中に使われる各種名称は各作者、権利保持者のものです。
+
+## 参考文献もしくはアプリケーションノートたち
+* AN-B-001 DA1458x Booting from serial interfaces: Dialog Semiconductor
+* 
