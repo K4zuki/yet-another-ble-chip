@@ -10,4 +10,6 @@ BLE(BLでは*なく*！)に興味があるけどよく知らない方々(なに�
 
 ## 参考文献もしくはアプリケーションノートたち
 * AN-B-001 DA1458x Booting from serial interfaces: Dialog Semiconductor
+* UM-B-012 DA14580/581/583 Creation of a secondary bootloader: Dialog Semiconductor
+* UM-B-025 DA14580/581/583 Bluetooth Smart development kit - Basic: Dialog Semiconductor
 * 
