@@ -1,4 +1,4 @@
-# Summary
+# 目次
 
 * [まえがき](foreword.md)
 
