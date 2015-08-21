@@ -14,7 +14,7 @@
 * **UM-B-012 DA14580/581/583 Creation of a secondary bootloader** : Dialog Semiconductor
 * **UM-B-025 DA14580/581/583 Bluetooth Smart development kit - Basic **: Dialog Semiconductor
     * ** その他Ｄ社チップに関する情報は support.dialog-semiconductor.com/ にどうぞ **
-* **DA14580/murata module PCBs(Git repository)**: [](github.com/K4zuki/da14580)
+* **DA14580/murata module PCBs**: [Git repository](github.com/K4zuki/da14580)
 * **TypeZY (LBCA2HNZYZ) Bluetooth® Smart Module**: Murata Manufucturing Co.,Ltd.
     * http://wireless.murata.com/eng/products/rf-modules-1/bluetooth/type-zy.html
 * mbed: developer.mbed.org
