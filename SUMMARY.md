@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * ほげ
 * [まえがき](0.0_foreword.md)
    * [これは何](0.1_whats_this.md)
    * [誰に読んでほしいか](0.2_who_would_read_this.md)
