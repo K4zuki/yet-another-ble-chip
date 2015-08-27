@@ -9,5 +9,4 @@
 * [１章：開発環境](1.0_DevelopEnvironment.md)
    * [Dialog社「SmartSnippets」](1.2_DialogSmartSnippets.md)
    * [ARMコア開発環境](1.1_ArmCoreEnv.md)
-* [ARMコア開発環境](1.1_ArmCoreEnv.md)
 
