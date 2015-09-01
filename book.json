@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "gitbook-plugin-yahei"
+        "gitbook-plugin-yahei",
+        "plugin-zawgyicss"
     ],
     "pluginsConfig": {}
 }
