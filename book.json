@@ -1,6 +1,3 @@
-"language": [
-    "jp"
-]
 {
 "plugins": [
       "gitbook-plugin-yahei"
