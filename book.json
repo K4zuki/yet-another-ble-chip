@@ -12,7 +12,7 @@
     ],
     "pluginsConfig": {
         "fontSettings": {
-            "theme": "night",
+            "theme": "white",
             "family": "serif",
             "size": 3
         },
