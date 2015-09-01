@@ -3,5 +3,10 @@
         "gitbook-plugin-autocover",
         "addcssjs"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+      "addcssjs": {
+        "js": ["js/custom.js"],
+        "css": ["css/custom.css"]
+        }
+    }
 }
