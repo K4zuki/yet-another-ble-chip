@@ -6,8 +6,8 @@
     "pluginsConfig": {
         "fontSettings": {
             "theme": "night",
-            "family": "sans",
-            "size": 2
+            "family": "serif",
+            "size": 3
         },
         "addcssjs": {
             "js": ["js/custom.js"],
