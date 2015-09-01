@@ -12,8 +12,8 @@
     ],
     "pluginsConfig": {
         "fontSettings": {
-            "theme": "white",
-            "family": "serif",
+            "theme": "White",
+            "family": "Sans",
             "size": 3
         },
         "addcssjs": {
