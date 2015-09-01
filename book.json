@@ -4,7 +4,7 @@
         "addcssjs"
     ],
     "pluginsConfig": {
-        "theme": "white",
+        "theme": "night",
         "family": "sans",
         "size": 2,
         "addcssjs": {
