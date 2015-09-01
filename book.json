@@ -2,7 +2,6 @@
     "plugins": [
         "plugin-zawgyicss",
         "gitbook-plugin-autocover",
-        "gitbook-plugin-yahei",
         "addcssjs"
     ],
     "pluginsConfig": {}
