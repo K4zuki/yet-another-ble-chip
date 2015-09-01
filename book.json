@@ -6,3 +6,6 @@
     "jp"
   ]
 }
+"plugins": [
+      "gitbook-plugin-yahei"
+      ]
