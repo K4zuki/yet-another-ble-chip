@@ -1,11 +1,9 @@
-{
   "gitbook": [
     ">=2.0.0"
   ]
   "language": [
     "jp"
   ]
-}
 "plugins": [
       "gitbook-plugin-yahei"
       ]
