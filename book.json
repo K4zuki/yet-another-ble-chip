@@ -4,6 +4,14 @@
 "language": [
     "jp"
 ]
+{
 "plugins": [
       "gitbook-plugin-yahei"
 ]
+    "plugins": ["autocover"],
+    "pluginsConfig": {
+        "autocover": {
+            // Configuration for autocover (see below)
+        }
+    }
+}
