@@ -1,7 +1,8 @@
 {
     "plugins": [
         "gitbook-plugin-yahei",
-        "plugin-zawgyicss"
+        "plugin-zawgyicss",
+        "gitbook-plugin-autocover"
     ],
     "pluginsConfig": {}
 }
