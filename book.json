@@ -1,2 +1,8 @@
-{ {"gitbook": ">=2.0.0" }
- {"language": "jp" }}
+{
+  "gitbook": {
+    ">=2.0.0"
+  }
+  "language": {
+    "jp"
+  }
+}
