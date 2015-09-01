@@ -5,7 +5,7 @@
     ],
     "pluginsConfig": {
         "theme": "white",
-        "family": "serif",
+        "family": "sans",
         "size": 2,
         "addcssjs": {
             "js": ["js/custom.js"],
