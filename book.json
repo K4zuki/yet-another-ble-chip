@@ -4,9 +4,9 @@
         "addcssjs"
     ],
     "pluginsConfig": {
-        "theme": {"sepia", "night" or "white",
-            "family": "serif" or "sans",
-            "size": 1 to 4},
+        "theme": "white",
+        "family": "serif",
+        "size": 2,
         "addcssjs": {
             "js": ["js/custom.js"],
             "css": ["css/custom.css"]
