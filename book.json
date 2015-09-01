@@ -1,7 +1,7 @@
 {
-"plugins": [
+    "plugins": [
       "gitbook-plugin-yahei"
-]
+    ]
     "plugins": ["autocover"],
     "pluginsConfig": {
         "autocover": {
