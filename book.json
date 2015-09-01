@@ -1,6 +1,5 @@
 {
     "plugins": [
-gitbook-plugin-autocover
         "plugin-zawgyicss",
         "gitbook-plugin-autocover"
     ],
