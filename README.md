@@ -1,3 +1,1 @@
-<vlfont>
-# まえがき
-</vlfont>
+# <vlfont>まえがき</vlfont>
