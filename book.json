@@ -13,7 +13,7 @@
     "pluginsConfig": {
         "fontSettings": {
             "theme": "White",
-            "family": "VL Gothic",
+            "family": "VL ゴシック",
             "size": 3
         },
         "addcssjs": {
