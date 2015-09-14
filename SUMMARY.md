@@ -9,4 +9,5 @@
    * [Dialog社「SmartSnippets」](2.2_DialogSmartSnippets.md)
    * [mbed(TM)プラットフォームを利用する](1.3_use_mbed.md)
    * [ぼくがかんがえたさいきょうのｒｙ](2.4_MyBestIdea.md)
+* DA14580をもう少し詳しく
 
