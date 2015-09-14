@@ -8,5 +8,5 @@
    * [ARMコア開発環境](2.1_ArmCoreEnv.md)
    * [Dialog社「SmartSnippets」](2.2_DialogSmartSnippets.md)
    * [mbed(TM)プラットフォームを利用する](1.3_use_mbed.md)
-   * [ぼくがかんがえたさいきょうのｒｙ](1.4_MyBestIdea.md)
+   * [ぼくがかんがえたさいきょうのｒｙ](2.4_MyBestIdea.md)
 
