@@ -9,7 +9,6 @@
     "plugins": [
         "gitbook-plugin-autocover",
         "addcssjs",
-        "gitbook-plugin-japanese-support"
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
