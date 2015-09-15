@@ -1,5 +1,4 @@
 {
-    "title": "もうひとつのBluetooth Low Energy IC でLEDを光らせる本",
     "styles": {
         "website": "website.css",
         "ebook": "ebook.css",
@@ -12,7 +11,7 @@
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
-            "title": "My Book",
+            "title": "もうひとつのBluetooth Low Energy IC でLEDを光らせる本",
             "author": "Author",
             "font": {
                 "size": null,
