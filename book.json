@@ -8,7 +8,7 @@
     },
     "plugins": [
         "gitbook-plugin-autocover",
-        "addcssjs",
+        "addcssjs"
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
