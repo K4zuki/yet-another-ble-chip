@@ -9,7 +9,8 @@
     },
     "plugins": [
         "gitbook-plugin-autocover",
-        "addcssjs"
+        "addcssjs",
+        "dmp-hr-to-page-break"
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
