@@ -8,7 +8,8 @@
         "print": "print.css"
     },
     "plugins": [
-        "gitbook-plugin-autocover"
+        "gitbook-plugin-autocover",
+        "gitbook-plugin-anchors"
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
