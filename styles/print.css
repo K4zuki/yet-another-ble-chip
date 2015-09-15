@@ -1,1 +1,6 @@
 /* CSS for print */
+.vlfont {font-family: "VL Gothic",sans-serif; }
+pagebreak
+{
+	page-break-after: always;
+}
