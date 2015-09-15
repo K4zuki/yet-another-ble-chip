@@ -8,8 +8,7 @@
         "epub": "epub.css"
     },
     "plugins": [
-        "gitbook-plugin-autocover",
-        "addcssjs"
+        "gitbook-plugin-autocover"
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
@@ -27,14 +26,6 @@
             "background": {
                 "color": "#09F"
             }
-        },
-        "addcssjs": {
-            "js": [
-                "js/custom.js"
-            ],
-            "css": [
-                "css/custom.css"
-            ]
         }
     }
 }
