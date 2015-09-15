@@ -1,6 +1,6 @@
 /* CSS for website */
 .vlfont {font-family: "VL Gothic",sans-serif; }
-pagebreak
+.pagebreak
 {
 	page-break-after: always;
 }
