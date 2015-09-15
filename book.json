@@ -4,7 +4,8 @@
         "ebook": "ebook.css",
         "pdf": "pdf.css",
         "mobi": "mobi.css",
-        "epub": "epub.css"
+        "epub": "epub.css",
+        "print": "print.css"
     },
     "plugins": [
         "gitbook-plugin-autocover"
