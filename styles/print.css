@@ -1,5 +1,1 @@
 /* CSS for print */
-pagebreak
-{
-	page-break-after: always;
-}
