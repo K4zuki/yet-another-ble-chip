@@ -9,7 +9,7 @@
     },
     "plugins": [
         "gitbook-plugin-autocover",
-        "gitbook-plugin-anchors"
+        "anchors"
     ],
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
