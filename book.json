@@ -14,7 +14,7 @@
     "pluginsConfig": {
         "gitbook-plugin-autocover": {
             "title": "もうひとつのBluetooth Low Energy IC でLEDを光らせる本",
-            "author": "Author",
+            "author": "Kazuki Yamamoto",
             "font": {
                 "size": null,
                 "family": "Impact",
