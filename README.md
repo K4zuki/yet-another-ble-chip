@@ -1,6 +1,6 @@
 ---
 title: もうひとつのBluetooth Low Energy IC でLEDを光らせる本
-author: @_K4zuki_
+author: "@_K4zuki_"
 date: C89
 ...
 
