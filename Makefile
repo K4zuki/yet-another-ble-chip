@@ -1,6 +1,6 @@
 PANDOC = pandoc
-HOME = /home/yamamoto
-REF_DOCX = $(HOME)/Dropbox/ref.docx
+#HOME = /home/yamamoto
+REF_DOCX = $(HOME)/.pandoc/ref.docx
 PFLAGS = -s -S
 PFLAGS += --read=markdown+ignore_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
 PFLAGS += --toc
@@ -12,7 +12,7 @@ MDSRC += 1.[01]*.md
 MDSRC += 2.[0123]*.md
 MDSRC += 3.[01]*.md
 MDSRC += 4.[01]*.md
-TARGET = $(HOME)/Dropbox/out.docx
+TARGET = YetAnotherBLE.docx
 
 all: docx
 #	ls $(MDSRC)
