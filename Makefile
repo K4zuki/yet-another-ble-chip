@@ -12,6 +12,7 @@ MDSRC += 1.[01]*.md
 MDSRC += 2.[0123]*.md
 MDSRC += 3.[01]*.md
 MDSRC += 4.[01]*.md
+MDSRC += 9.9*.md
 TARGET = YetAnotherBLE.docx
 
 all: docx
