@@ -8,10 +8,10 @@ date: C90/2016
 このドキュメントは、Dialog社のBluetooth Low Energy IC `DA14580` を使った作品で、
 *Lチカをするにはどうすればよいか* を解説する本です。  
 
-Bluetooth(R) Low Energy ないしはBLEの機能を持ったIoTデバイス（）に採用されるICというとTI社とNordic社、
+Bluetooth(R) Low Energy ないしはBLEの機能を持ったIoTデバイスに採用されるICというとTI社とNordic社、
 さらにはKoshian^[] に採用されたBroadcom社の名前が挙がりますが、
-この本では、_筆者の個人的な理由_^[]からDialog Semiconductor社の
-BLE ICであるDA1458xシリーズ^[DA14580/1/2/3 ただし582は2016年1月現在DigiKeyにリストされていない] の
+この本では、_筆者の個人的な理由_ からDialog Semiconductor社の
+BLE ICであるDA1458xシリーズ^[DA14580/1/2/3 ただし582/3は2016年1月現在DigiKey.jpのリストに挙がっていない] の
 `DA14580`に注目し、同ICを採用しFCC/IC/TELEC認証を取得した村田製作所の
 アンテナ内蔵モジュール^[]
 を試食しました。
