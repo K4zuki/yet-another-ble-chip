@@ -1,6 +1,24 @@
+WINDOWS =
+ifdef WINDOWS
+#windows
+LS = C://busybox ls
+SH = C://busybox sh -c
+BASENAME = C://busybox basename
+PANDOC = C:/Users/yamamoto/AppData/Local/Pandoc/pandoc
+else
+#linux
+LS = ls
+SH = bash
+BASENAME = basename
 PANDOC = pandoc
+endif
+PANSTYLES = $(HOME)/.pandoc
+
+#PANDOC = pandoc
 #HOME = /home/yamamoto
-REF_DOCX = $(HOME)/.pandoc/ref.docx
+#REF_DOCX = $(HOME)/.pandoc/ref.docx
+REF_DOCX = $(PANSTYLES)/ref.docx
+
 PFLAGS = -s -S
 PFLAGS += --read=markdown+ignore_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
 PFLAGS += --toc
@@ -16,7 +34,7 @@ MDSRC += 9.9*.md
 TARGET = YetAnotherBLE.docx
 
 all: docx
-#	ls $(MDSRC)
+#	$(LS) $(MDSRC)
 #	$(PANDOC) $(PFLAGS) $(MDSRC) -o $(TARGET)
 
 docx:
