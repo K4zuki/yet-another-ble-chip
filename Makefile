@@ -14,14 +14,11 @@ PANDOC = pandoc
 endif
 PANSTYLES = $(HOME)/.pandoc
 
-#PANDOC = pandoc
-#HOME = /home/yamamoto
-#REF_DOCX = $(HOME)/.pandoc/ref.docx
 REF_DOCX = $(PANSTYLES)/ref.docx
 
 PFLAGS = -s -S
 PFLAGS += --read=markdown+ignore_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
-PFLAGS += --toc
+PFLAGS += --toc --list
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
 PFLAGS += --reference-docx=$(REF_DOCX)
 MDSRC = README.md
@@ -31,15 +28,34 @@ MDSRC += 2.[0123]*.md
 MDSRC += 3.[01]*.md
 MDSRC += 4.[01]*.md
 MDSRC += 9.9*.md
-TARGET = YetAnotherBLE.docx
+FILTERED:= $(MDSRC:.md=_f.md)
+TARGET = YetAnotherBLE
 
-all: docx
-#	$(LS) $(MDSRC)
-#	$(PANDOC) $(PFLAGS) $(MDSRC) -o $(TARGET)
+all: docx pdf
 
 docx:
-	$(PANDOC) $(PFLAGS) $(MDSRC) -o $(TARGET)
+	$(PANDOC) $(PFLAGS) $(MDSRC) -o $(TARGET).docx
 
-#md -> tex -> docx
+tables: $(FILTERED)
 
-#pandoc -s -S README.md 0.[234]*.md 1.*.md 2.[01234]*.md 3.[0123]*.md --read=markdown+ignore_line_breaks+strikeout --reference-docx=$HOME/Dropbox/ref.docx --toc -o $HOME/Dropbox/out.docx
+%_f.md: %.md
+	cat $< | ./include.py >$@
+
+merge: tables
+	cat $(FILTERED) > $(TARGET).md
+
+tex: merge
+	$(PANDOC) $(PFLAGS) --template=$(PANSTYLES)/CJK_xelatex.tex --latex-engine=xelatex $(TARGET).md -o $(TARGET).tex
+#	$(PANDOC) $(PFLAGS) --template=$(PANSTYLES)/CJK_xelatex.tex --latex-engine=xelatex $(MDSRC) -o $(TARGET).tex
+
+pdf: tex
+	xelatex --no-pdf $(TARGET).tex ;xelatex $(TARGET).tex
+	make clean
+
+clean:
+	if [ -f $(TARGET).tex ] ;then rm $(TARGET).tex ;fi
+	if [ -f $(TARGET).out ] ;then rm $(TARGET).out ;fi
+	if [ -f $(TARGET).aux ] ;then rm $(TARGET).aux ;fi
+	if [ -f $(TARGET).log ] ;then rm $(TARGET).log ;fi
+	if [ -f $(TARGET).toc ] ;then rm $(TARGET).toc ;fi
+	rm *_f.md
