@@ -16,11 +16,12 @@ _file = parser.args.infile
 _output = parser.args.out
 
 include = re.compile("`([^`]+)`\{.include}")
+stripped = re.sub("<!--[\s\S]*?-->", "", _file.read())
 output = open(_output,'wb')
-#for line in sys.stdin:
-for line in _file:
+
+for line in stripped.split("\n"):
     if include.search(line):
         input_file = include.search(line).groups()[0]
         file_contents = open(input_file, "rb").read()
         line = include.sub(line, file_contents)
-    output.write(line)
+    output.write(line+"\n")
