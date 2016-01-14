@@ -27,19 +27,23 @@ PFLAGS += --toc --list
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
 PFLAGS += --reference-docx=$(REF_DOCX)
 
-MDSRC =  $(shell $(LS) README.md)
+MDSRC =  README.md
 MDSRC += $(shell $(LS) 0.[234]*.md)
 MDSRC += $(shell $(LS) 1.[01]*.md)
 MDSRC += $(shell $(LS) 2.[0123]*.md)
 MDSRC += $(shell $(LS) 3.[01]*.md)
 MDSRC += $(shell $(LS) 4.[01]*.md)
 MDSRC += $(shell $(LS) 9.9*.md)
-#SRC=$(shell ls $(MDSRC))
+
 CSV2TABLE:= csv2mdtable.py
 FILTER:= include.py
-FILTERED:= $(MDSRC:.md=_f.md)
+
+SRC=$(filter-out f_%.md,$(MDSRC))
+FILTERED=$(addprefix f_,$(SRC))
+#FILTERED:= $(INPUT:.md=f_%.md)
 CSV:= $(shell $(LS) *.csv)
 TABLES:= $(CSV:.csv=_t.md)
+
 TARGET = YetAnotherBLE
 
 all: docx pdf
@@ -47,18 +51,18 @@ all: docx pdf
 docx: merge
 	$(PANDOC) $(PFLAGS) $(FILTERED) -o $(TARGET).docx
 
-merge: filtered
+merge: $(FILTERED)
 	$(BUSYBOX) cat $(FILTERED) > $(TARGET).md
 
-filtered: tables $(FILTERED)
+#filtered: tables $(FILTERED)
 
-tables: $(TABLES)
+#tables: $(TABLES)
 
-%_f.md: %.md
+$(FILTERED): $(SRC) $(TABLES)
 	$(BUSYBOX) cat $< | $(PYTHON) $(FILTER)  --out $@
 #	$(ECHO) $(CSV) $(TABLES) $(PYTHON) $(CSV2TABLE) $^
 
-%_t.md: %.csv
+$(TABLES): $(CSV)
 	$(PYTHON) $(CSV2TABLE) --file $< --out $@ --delimiter ','
 
 tex: merge
@@ -71,8 +75,10 @@ pdf: tex
 
 .PHONY: clean
 clean:
-	ls $(TABLES); if [ "$$?" == 0 ] ;then $(BUSYBOX) rm $(TABLES);fi
-	ls $(FILTERED); if [ "$$?" == 0 ] ;then $(BUSYBOX) rm $(FILTERED);fi
+	ls $(TABLES); if [ "$$?" == 0 ] ;then rm $(TABLES) ;fi
+	ls $(FILTERED); if [ "$$?" == 0 ] ;then rm $(FILTERED) ;fi
+	ls *_t.md; if [ "$$?" == 0 ] ;then rm *_t.md ;fi
+	ls f_*.md; if [ "$$?" == 0 ] ;then rm f_*.md ;fi
 	if [ -f $(TARGET).tex ] ;then $(BUSYBOX) rm $(TARGET).tex ;fi
 	if [ -f $(TARGET).out ] ;then $(BUSYBOX) rm $(TARGET).out ;fi
 	if [ -f $(TARGET).aux ] ;then $(BUSYBOX) rm $(TARGET).aux ;fi
