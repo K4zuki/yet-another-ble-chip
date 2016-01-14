@@ -1,18 +1,22 @@
 WINDOWS =
 ifdef WINDOWS
 #windows
-LS = C://busybox ls
-SH = C://busybox sh -c
-BASENAME = C://busybox basename
-PANDOC = C:/Users/yamamoto/AppData/Local/Pandoc/pandoc
-HOME=
+SHELL=C://busybox.exe sh -c
+BUSYBOX=C://busybox.exe
+LS =  ls
+SH = $(BUSYBOX) sh -c
+BASENAME = $(BUSYBOX) basename
+PANDOC = C:/Users/kyamamot/AppData/Local/Pandoc/pandoc
+HOME=C:/SPB_Data
 else
 #linux
+BUSYBOX=
 LS = ls
 SH = bash
 BASENAME = basename
 PANDOC = pandoc
 endif
+
 PANSTYLES = $(HOME)/.pandoc
 REF_DOCX = $(PANSTYLES)/ref.docx
 
@@ -22,29 +26,40 @@ PFLAGS += --read=markdown+ignore_line_breaks+header_attributes+escaped_line_brea
 PFLAGS += --toc --list
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
 PFLAGS += --reference-docx=$(REF_DOCX)
-MDSRC = $(shell ls README.md)
-MDSRC += $(shell ls 0.[234]*.md)
-MDSRC += $(shell ls 1.[01]*.md)
-MDSRC += $(shell ls 2.[0123]*.md)
-MDSRC += $(shell ls 3.[01]*.md)
-MDSRC += $(shell ls 4.[01]*.md)
-MDSRC += $(shell ls 9.9*.md)
+
+MDSRC =  $(shell $(LS) README.md)
+MDSRC += $(shell $(LS) 0.[234]*.md)
+MDSRC += $(shell $(LS) 1.[01]*.md)
+MDSRC += $(shell $(LS) 2.[0123]*.md)
+MDSRC += $(shell $(LS) 3.[01]*.md)
+MDSRC += $(shell $(LS) 4.[01]*.md)
+MDSRC += $(shell $(LS) 9.9*.md)
 #SRC=$(shell ls $(MDSRC))
+CSV2TABLE:= csv2mdtable.py
+FILTER:= include.py
 FILTERED:= $(MDSRC:.md=_f.md)
+CSV:= $(shell $(LS) *.csv)
+TABLES:= $(CSV:.csv=_t.md)
 TARGET = YetAnotherBLE
 
 all: docx pdf
 
-docx:
-	$(PANDOC) $(PFLAGS) $(MDSRC) -o $(TARGET).docx
+docx: merge
+	$(PANDOC) $(PFLAGS) $(FILTERED) -o $(TARGET).docx
 
-tables: $(FILTERED)
+merge: filtered
+	$(BUSYBOX) cat $(FILTERED) > $(TARGET).md
+
+filtered: tables $(FILTERED)
+
+tables: $(TABLES)
 
 %_f.md: %.md
-	cat $< | $(PYTHON) ./include.py --out $@
+	$(BUSYBOX) cat $< | $(PYTHON) $(FILTER)  --out $@
+#	$(ECHO) $(CSV) $(TABLES) $(PYTHON) $(CSV2TABLE) $^
 
-merge: tables
-	cat $(FILTERED) > $(TARGET).md
+%_t.md: %.csv
+	$(PYTHON) $(CSV2TABLE) --file $< --out $@ --delimiter ','
 
 tex: merge
 	$(PANDOC) $(PFLAGS) --template=$(PANSTYLES)/CJK_xelatex.tex --latex-engine=xelatex $(TARGET).md -o $(TARGET).tex
@@ -54,11 +69,13 @@ pdf: tex
 	xelatex --no-pdf $(TARGET).tex ;xelatex $(TARGET).tex
 	make clean
 
+.PHONY: clean
 clean:
-	if [ -f $(TARGET).tex ] ;then rm $(TARGET).tex ;fi
-	if [ -f $(TARGET).out ] ;then rm $(TARGET).out ;fi
-	if [ -f $(TARGET).aux ] ;then rm $(TARGET).aux ;fi
-	if [ -f $(TARGET).log ] ;then rm $(TARGET).log ;fi
-	if [ -f $(TARGET).toc ] ;then rm $(TARGET).toc ;fi
-	if [ -f $(TARGET).md  ] ;then rm $(TARGET).md  ;fi
-	rm *_f.md
+	ls $(TABLES); if [ "$$?" == 0 ] ;then $(BUSYBOX) rm $(TABLES);fi
+	ls $(FILTERED); if [ "$$?" == 0 ] ;then $(BUSYBOX) rm $(FILTERED);fi
+	if [ -f $(TARGET).tex ] ;then $(BUSYBOX) rm $(TARGET).tex ;fi
+	if [ -f $(TARGET).out ] ;then $(BUSYBOX) rm $(TARGET).out ;fi
+	if [ -f $(TARGET).aux ] ;then $(BUSYBOX) rm $(TARGET).aux ;fi
+	if [ -f $(TARGET).log ] ;then $(BUSYBOX) rm $(TARGET).log ;fi
+	if [ -f $(TARGET).toc ] ;then $(BUSYBOX) rm $(TARGET).toc ;fi
+	if [ -f $(TARGET).md  ] ;then $(BUSYBOX) rm $(TARGET).md  ;fi
