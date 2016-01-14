@@ -38,9 +38,13 @@ MDSRC += $(shell $(LS) 9.9*.md)
 CSV2TABLE:= csv2mdtable.py
 FILTER:= include.py
 
-SRC=$(filter-out f_%.md,$(MDSRC))
-FILTERED=$(addprefix f_,$(SRC))
-#FILTERED:= $(INPUT:.md=f_%.md)
+#all md source files but fith f_ prefix
+SRC= $(filter-out f_%.md,$(MDSRC))
+
+# all f_*.md files
+FILTERED:= $(SRC:%=f_%)
+#FILTERED= $(addprefix f_,$(SRC))
+
 CSV:= $(shell $(LS) *.csv)
 TABLES:= $(CSV:.csv=_t.md)
 
@@ -52,15 +56,19 @@ docx: merge
 	$(PANDOC) $(PFLAGS) $(FILTERED) -o $(TARGET).docx
 
 merge: $(FILTERED)
-	$(BUSYBOX) cat $(FILTERED) > $(TARGET).md
+	$(BUSYBOX) cat $^ | $(PYTHON) $(FILTER) --out $(TARGET).md
 
 #filtered: tables $(FILTERED)
 
 #tables: $(TABLES)
 
-$(FILTERED): $(SRC) $(TABLES)
-	$(BUSYBOX) cat $< | $(PYTHON) $(FILTER)  --out $@
+$(FILTERED): $(SRC)
+	for src in $(SRC);do\
+		$(BUSYBOX) cat $$src | $(PYTHON) $(FILTER)  --out f_$$src \
+	;done
 #	$(ECHO) $(CSV) $(TABLES) $(PYTHON) $(CSV2TABLE) $^
+
+$(SRC): $(TABLES)
 
 $(TABLES): $(CSV)
 	$(PYTHON) $(CSV2TABLE) --file $< --out $@ --delimiter ','
@@ -85,3 +93,4 @@ clean:
 	if [ -f $(TARGET).log ] ;then $(BUSYBOX) rm $(TARGET).log ;fi
 	if [ -f $(TARGET).toc ] ;then $(BUSYBOX) rm $(TARGET).toc ;fi
 	if [ -f $(TARGET).md  ] ;then $(BUSYBOX) rm $(TARGET).md  ;fi
+	if [ -f $(TARGET).xdv ] ;then $(BUSYBOX) rm $(TARGET).xdv ;fi
