@@ -18,7 +18,8 @@ PANDOC = pandoc
 endif
 
 PANSTYLES = $(HOME)/.pandoc
-REF_DOCX = $(PANSTYLES)/ref.docx
+MISC=$(PANSTYLES)/pandoc_misc
+REF_DOCX = $(MISC)/ref.docx
 
 PYTHON= python
 PFLAGS = -s -S
@@ -35,8 +36,10 @@ MDSRC += $(shell $(LS) 3.[01]*.md)
 MDSRC += $(shell $(LS) 4.[01]*.md)
 MDSRC += $(shell $(LS) 9.9*.md)
 
-CSV2TABLE:= csv2mdtable.py
-FILTER:= include.py
+#CSV2TABLE:= csv2mdtable.py
+#FILTER:= include.py
+CSV2TABLE:= $(MISC)/csv2mdtable.py
+FILTER:= $(MISC)/include.py
 
 #all md source files but fith f_ prefix
 SRC= $(filter-out f_%.md,$(MDSRC))
