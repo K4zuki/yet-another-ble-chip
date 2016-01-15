@@ -58,26 +58,28 @@ all: docx pdf
 docx: merge
 	$(PANDOC) $(PFLAGS) $(FILTERED) -o $(TARGET).docx
 
-merge: $(FILTERED)
-	$(BUSYBOX) cat $^ | $(PYTHON) $(FILTER) --out $(TARGET).md
+merge: filtered
+	$(BUSYBOX) cat $(FILTERED) > $(TARGET).md
 
-#filtered: tables $(FILTERED)
-
-#tables: $(TABLES)
-
-$(FILTERED): $(SRC)
+#$(FILTERED): $(TABLES)
+filtered: tables
 	for src in $(SRC);do\
 		$(BUSYBOX) cat $$src | $(PYTHON) $(FILTER)  --out f_$$src \
 	;done
+
 #	$(ECHO) $(CSV) $(TABLES) $(PYTHON) $(CSV2TABLE) $^
 
-$(SRC): $(TABLES)
+#$(SRC): $(TABLES)
 
-$(TABLES): $(CSV)
-	$(PYTHON) $(CSV2TABLE) --file $< --out $@ --delimiter ','
+#$(TABLES): $(CSV)
+tables: $(CSV)
+	for csv in $(CSV);do\
+		$(PYTHON) $(CSV2TABLE) --file $$csv --out `$(BASENAME) $$csv .csv`_t.md --delimiter ',' \
+	;done
+#		$(BUSYBOX) cat $$src | $(PYTHON) $(FILTER)  --out f_$$src \
 
 tex: merge
-	$(PANDOC) $(PFLAGS) --template=$(PANSTYLES)/CJK_xelatex.tex --latex-engine=xelatex $(TARGET).md -o $(TARGET).tex
+	$(PANDOC) $(PFLAGS) --template=$(MISC)/CJK_xelatex.tex --latex-engine=xelatex $(TARGET).md -o $(TARGET).tex
 #	$(PANDOC) $(PFLAGS) --template=$(PANSTYLES)/CJK_xelatex.tex --latex-engine=xelatex $(MDSRC) -o $(TARGET).tex
 
 pdf: tex
@@ -86,10 +88,10 @@ pdf: tex
 
 .PHONY: clean
 clean:
-	ls $(TABLES); if [ "$$?" == 0 ] ;then rm $(TABLES) ;fi
-	ls $(FILTERED); if [ "$$?" == 0 ] ;then rm $(FILTERED) ;fi
-	ls *_t.md; if [ "$$?" == 0 ] ;then rm *_t.md ;fi
-	ls f_*.md; if [ "$$?" == 0 ] ;then rm f_*.md ;fi
+	ls $(TABLES); if [ $$? -eq 0 ] ;then rm $(TABLES) ;fi
+	ls $(FILTERED); if [ $$? -eq 0 ] ;then rm $(FILTERED) ;fi
+	ls *_t.md; if [ $$? -eq 0 ] ;then rm *_t.md ;fi
+	ls f_*.md; if [ $$? -eq 0 ] ;then rm f_*.md ;fi
 	if [ -f $(TARGET).tex ] ;then $(BUSYBOX) rm $(TARGET).tex ;fi
 	if [ -f $(TARGET).out ] ;then $(BUSYBOX) rm $(TARGET).out ;fi
 	if [ -f $(TARGET).aux ] ;then $(BUSYBOX) rm $(TARGET).aux ;fi
