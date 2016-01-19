@@ -7,7 +7,7 @@ papersize: b5paper
 comiket: "C90"
 year: "2016"
 publisher: "近所のコンビニ"
-localfontdir: ExternalLocation=/usr/local/texlive/2015basic/texmf-local/
+localfontdir:  ExternalLocation=/home/yamamoto/.local/share/fonts/
 mainfont: RictyDiminished-Regular
 sansfont: RictyDiminished-Regular
 monofont: RictyDiminished-Regular
@@ -20,6 +20,7 @@ geometry: top=30truemm,bottom=30truemm,left=20truemm,right=20truemm
 ...
 
 <!--
+localfontdir: ExternalLocation=/usr/local/texlive/2015basic/texmf-local/
 `pinout.txt`{.include}
 -->
 

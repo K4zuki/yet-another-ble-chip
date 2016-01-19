@@ -1,24 +1,11 @@
-WINDOWS =
-ifdef WINDOWS
-#windows
-SHELL=C://busybox.exe sh -c
-BUSYBOX=C://busybox.exe
-LS =  ls
-SH = $(BUSYBOX) sh -c
-BASENAME = $(BUSYBOX) basename
-PANDOC = C:/Users/kyamamot/AppData/Local/Pandoc/pandoc
-HOME=C:/SPB_Data
-else
-#linux
 BUSYBOX=
 LS = ls
 SH = bash
 BASENAME = basename
 PANDOC = pandoc
-endif
 
 PANSTYLES = $(HOME)/.pandoc
-MISC=$(PANSTYLES)/pandoc_misc
+MISC = $(PANSTYLES)/pandoc_misc
 REF_DOCX = $(MISC)/ref.docx
 
 PYTHON= python
