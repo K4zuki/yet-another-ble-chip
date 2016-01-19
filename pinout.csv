@@ -54,3 +54,8 @@ P3_4,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P3_5,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P3_6,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P3_7,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
+**[Analog interface]**,,,,,,
+ADC[0],o,o,o,AI,INPUT,"Analog to Digital Converter input 0. Mapped on P0_0"
+ADC[1],o,o,o,AI,INPUT,"Analog to Digital Converter input 1. Mapped on P0_1"
+ADC[2],o,o,o,AI,INPUT,"Analog to Digital Converter input 2. Mapped on P0_2"
+ADC[3],o,o,o,AI,INPUT,"Analog to Digital Converter input 3. Mapped on P0_3"
