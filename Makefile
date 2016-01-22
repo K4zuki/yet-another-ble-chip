@@ -7,11 +7,15 @@ PANDOC = pandoc
 PANSTYLES = $(HOME)/.pandoc
 MISC = $(PANSTYLES)/pandoc_misc
 REF_DOCX = $(MISC)/ref.docx
+CABAL = $(HOME)/.cabal
+
 
 PYTHON= python
 PFLAGS = -s -S
-PFLAGS += --read=markdown+ignore_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
+PFLAGS += --read=markdown+east_asian_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
 PFLAGS += --toc --list
+PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
+#PFLAGS += --filter $(CABAL)/bin/pandoc-include
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
 PFLAGS += --reference-docx=$(REF_DOCX)
 
