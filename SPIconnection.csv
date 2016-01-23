@@ -1,0 +1,7 @@
+"ext function","SD pin","580 pin","580 function","flash pin"
+"MOSI(ext as master)","3","P0_4","MOSI(580 as master)","SI(5)"
+"RXD","<<<","<<<","TXD",""
+"MISO(ext as master)","7","P0_7","MISO(580 as master)","SO(2)"
+"SCK(ext as master)","5","P0_5","SCK(580 as master)","SCK(6)"
+"TXD",">>>,">>>",""RXD"",""
+"CS(ext as master)","2","P1_0(580 as master)","CS(580 as master)","CS(1)"
