@@ -1,4 +1,4 @@
-PinName,WLCSP34*,QFN40,QFN48,Function,ResetState,Description
+PinName,WLCSP34,QFN40,QFN48,Function,ResetState,Description
 **[POWER]**,,,,,,
 VBAT3V,o,o,o,AIO,,3.0V battery connection. exclusive use with VBAT1V
 VBAT1V,o,o,o,AI,,1.5V battery connection. exclusive use with VBAT3V.
@@ -16,7 +16,7 @@ XTAL16Mm,o,o,o,AO,,16MHz XTAL output
 XTAL32kp,o,o,o,AI,,32.768kHz XTAL input
 XTAL32kp,o,o,o,AO,,32.768kHz XTAL output
 **[RADIO]**,,,,,,
-RFIOp,o,o,o,AIO,,RF input/output. Impedance 50 $ohm$
+RFIOp,o,o,o,AIO,,RF input/output. Impedance 50 ohm
 RFIOm,o,o,o,AIO,,RF ground
 **[PORT0]**,,,,,,
 P0_0,o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD, used for primary bootloader"
@@ -32,8 +32,8 @@ P1_0,o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P1_1,o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P1_2,o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P1_3,o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
-P1_4/SWCLK,o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD, SWCLK by default"
-P1_5/SWDIO,o,o,o,DIO,I-PU,"Digital I/O, selectable PU/PD, SWDIO by default"
+"P1_4,SWCLK",o,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD, SWCLK by default"
+"P1_5,SWDIO",o,o,o,DIO,I-PU,"Digital I/O, selectable PU/PD, SWDIO by default"
 **[PORT2]**,,,,,,
 P2_0,,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P2_1,,o,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
@@ -55,7 +55,7 @@ P3_5,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P3_6,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 P3_7,,,o,DIO,I-PD,"Digital I/O, selectable PU/PD"
 **[Analog interface]**,,,,,,
-ADC[0],o,o,o,AI,INPUT,"Analog to Digital Converter input 0. Mapped on P0_0"
-ADC[1],o,o,o,AI,INPUT,"Analog to Digital Converter input 1. Mapped on P0_1"
-ADC[2],o,o,o,AI,INPUT,"Analog to Digital Converter input 2. Mapped on P0_2"
-ADC[3],o,o,o,AI,INPUT,"Analog to Digital Converter input 3. Mapped on P0_3"
+ADC[0],o,o,o,AI,INPUT,Analog to Digital Converter input 0. Mapped on P0_0
+ADC[1],o,o,o,AI,INPUT,Analog to Digital Converter input 1. Mapped on P0_1
+ADC[2],o,o,o,AI,INPUT,Analog to Digital Converter input 2. Mapped on P0_2
+ADC[3],o,o,o,AI,INPUT,Analog to Digital Converter input 3. Mapped on P0_3
