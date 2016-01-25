@@ -18,6 +18,7 @@ CJKsansfont: RictyDiminished-Regular
 CJKmonofont: RictyDiminished-Regular
 geometry: top=30truemm,bottom=30truemm,left=20truemm,right=20truemm
 keywords: keyword
+secPrefix: Chapter
 ...
 
 <!--
