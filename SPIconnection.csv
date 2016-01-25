@@ -3,5 +3,5 @@
 "RXD","<<<","<<<","TXD",""
 "MISO(ext as master)","7","P0_7","MISO(580 as master)","SO(2)"
 "SCK(ext as master)","5","P0_5","SCK(580 as master)","SCK(6)"
-"TXD",">>>,">>>",""RXD"",""
+"TXD","\>\>\>","\>\>\>","RXD",""
 "CS(ext as master)","2","P1_0(580 as master)","CS(580 as master)","CS(1)"
