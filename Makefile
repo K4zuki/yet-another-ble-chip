@@ -76,7 +76,6 @@ tex: merge
 
 pdf: tex
 	xelatex --no-pdf $(TARGET).tex ;xelatex $(TARGET).tex
-	make clean
 
 .PHONY: clean
 clean:
