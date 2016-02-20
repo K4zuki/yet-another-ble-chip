@@ -1,0 +1,15 @@
+index,packet purpose,payload purpose,value (if any),comments
+0,packet length[1],,,
+1,packet length[0],,,
+2,CRC[3],,,CRC32
+3,CRC[2],,,
+4,CRC[1],,,
+5,CRC[0],,,
+6,buffer[0],action,0x81,ACTION_OTP_WRITE
+7,,address[3],MSB,mainly for SPI/I^2^C read/write command packets
+8,,address[2],,
+9,,address[1],,
+10,,address[0],LSB,
+11,,binarysize[1],MSB,application binary size
+12,buffer[6],binarysize[0],LSB,
+13..n,buffer[7..n],binary[0..n],,
