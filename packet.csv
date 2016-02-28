@@ -1,8 +1,8 @@
 index,packet purpose,payload purpose,value (if any),comments
 0,packet length[1],,,
 1,packet length[0],,,
-2,CRC[3],,,CRC32
-3,CRC[2],,,
+2,CRC[3],,,CRC32 of _payload_
+3,CRC[2],,,polynomial 0xEDB88320
 4,CRC[1],,,
 5,CRC[0],,,
 6,buffer[0],action,0x81,ACTION_OTP_WRITE
