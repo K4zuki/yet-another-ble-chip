@@ -6,4 +6,4 @@
 *.toc
 *.xdv
 ./Out
-./Out/*
+./Out/*.*
