@@ -1,1 +1,9 @@
-*.md~
+*/*_t.md~
+*/f_*.md~
+*/*.out
+*/*.aux
+*/*.log
+*/*.toc
+*/*.xdv
+./Out
+./Out/*
