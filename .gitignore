@@ -5,5 +5,4 @@
 *.log
 *.toc
 *.xdv
-./Out
-./Out/*.md
+/Out
