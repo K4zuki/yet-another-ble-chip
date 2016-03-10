@@ -56,7 +56,9 @@ docx: merge
 
 pdf: tex
 	xelatex --output-directory=$(OUT) --no-pdf $(OUT)/$(TARGET).tex; \
-	xelatex $(OUT)/$(TARGET).tex
+	cd $(OUT); \
+	ln -s ../images images; \
+	xelatex $(TARGET).tex
 
 tex: merge
 	$(PANDOC) $(PFLAGS) --template=$(MISC)/CJK_xelatex.tex --latex-engine=xelatex $(OUT)/$(TARGET).md -o $(OUT)/$(TARGET).tex
