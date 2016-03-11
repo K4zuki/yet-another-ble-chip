@@ -57,7 +57,8 @@ docx: merge
 pdf: tex
 	xelatex --output-directory=$(OUT) --no-pdf $(OUT)/$(TARGET).tex; \
 	cd $(OUT); \
-	ln -s ../images images; \
+	rm -f ./images; \
+	ln -s ../images ./images; \
 	xelatex $(TARGET).tex
 
 tex: merge
@@ -75,6 +76,7 @@ filtered: tables
 tables: $(CSV) mkdir
 	for csv in $(CSV);do \
 		echo $$csv; \
+		$(PYTHON) $(CSV2TABLE) --file $$csv --out $(OUT)/`$(BASENAME) $$csv .csv`_b.md --delimiter \;; \
 		$(PYTHON) $(CSV2TABLE) --file $$csv --out $(OUT)/`$(BASENAME) $$csv .csv`_t.md --delimiter "," \
 	;done
 
