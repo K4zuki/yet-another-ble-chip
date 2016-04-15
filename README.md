@@ -22,6 +22,10 @@ secPrefix: Chapter
 linkcolor: black
 urlcolor: black
 citecolor: black
+chapter: true
+listings: true
+codeBlockCaptions: true
+listingTitle: 'List'
 ...
 
 <!--
