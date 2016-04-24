@@ -21,13 +21,13 @@ PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
 PFLAGS += --reference-docx=$(REF_DOCX)
 
 MDSRC =  README.md
-MDSRC += $(shell $(LS) 0.[234]*.md)
-MDSRC += $(shell $(LS) 1.[01]*.md)
-MDSRC += $(shell $(LS) 2.[0]*.md)
-#MDSRC += $(shell $(LS) 2.[0]*.md)
-MDSRC += $(shell $(LS) 3.[01]*.md)
-MDSRC += $(shell $(LS) 4.[01]*.md)
-MDSRC += $(shell $(LS) 9.9*.md)
+# MDSRC += $(shell $(LS) 0.[234]*.md)
+# MDSRC += $(shell $(LS) 1.[01]*.md)
+# MDSRC += $(shell $(LS) 2.[0]*.md)
+# #MDSRC += $(shell $(LS) 2.[0]*.md)
+# MDSRC += $(shell $(LS) 3.[01]*.md)
+# MDSRC += $(shell $(LS) 4.[01]*.md)
+# MDSRC += $(shell $(LS) 9.9*.md)
 
 #CSV2TABLE:= csv2mdtable.py
 #FILTER:= include.py
