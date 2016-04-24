@@ -12,7 +12,9 @@ mainfont: RictyDiminished-Regular
 sansfont: RictyDiminished-Regular
 monofont: RictyDiminished-Regular
 mainlang: Japanese
-CJKoptions: BoldFont=RictyDiminished-Bold,ItalicFont=RictyDiminished-Oblique
+CJKoptions: BoldFont=RictyDiminished-Bold,
+  ItalicFont=RictyDiminished-Oblique,
+  BoldItalicFont=RictyDiminished-BoldOblique
 CJKmainfont: RictyDiminished-Regular
 CJKsansfont: RictyDiminished-Regular
 CJKmonofont: RictyDiminished-Regular
@@ -40,10 +42,22 @@ localfontdir: ExternalLocation=/home/yamamoto/.local/share/fonts/
 Bluetooth(R) Low Energy ないしはBLEの機能を持ったIoTデバイスに採用されるICというとTI社とNordic社、
 さらにはKoshian^[www.m-pression.com/ja/solutions/boards/koshian] に採用されたBroadcom社の名前が挙がりますが、
 この本では、_筆者の個人的な理由_ からDialog Semiconductor社の
-BLE ICであるDA1458xシリーズ^[DA14580/1/2/3 ただし582/3は2016年1月現在DigiKey.jpのリストに挙がっていない] の
+BLE ICであるDA1458xシリーズ^[DA14580/1/2/3 ただし582は2016年4月現在DigiKey.jpのリストに挙がっていない] の
 `DA14580`に注目し、同ICを採用しFCC/IC/TELEC認証を取得した村田製作所の
 アンテナ内蔵モジュール[^0.3.4]
 を試食しました。
 
 この本は、DA14580と開発環境の簡単な解説、mbed^TM^LPC1768にバイナリ書き込みアプリを実装する例の紹介、
 村田モジュールを載せた基板の設計、mbed風のドラッグ・アンド・ドロップ書き込みの実現、そして最後にLEDを光らせるオチで構成されています。
+
+`0.2_who_would_read_this.md`{.include}
+`0.3_warnings.md`{.include}
+`0.4_references.md`{.include}
+`1.0_da14580more_detail.md`{.include}
+`2.0_DevelopEnvironment.md`{.include}
+`2.1_ArmCoreEnv.md`{.include}
+`2.2_DialogSmartSnippets.md`{.include}
+`2.3_use_mbed.md`{.include}
+`3.1_MyBestIdea.md`{.include}
+`4.1_i_made_it.md`{.include}
+`9.9_tail.md`{.include}
