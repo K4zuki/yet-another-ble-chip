@@ -5,4 +5,5 @@
 *.log
 *.toc
 *.xdv
-Out/
+Out/*
+!Out/*.pdf
