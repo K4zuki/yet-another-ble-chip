@@ -2,19 +2,19 @@ BUSYBOX=
 LS = ls
 SH = bash
 BASENAME = basename
-PANDOC = pandoc
 
 PANSTYLES = $(HOME)/.pandoc
 MISC = $(PANSTYLES)/pandoc_misc
 REF_DOCX = $(MISC)/ref.docx
 CABAL = $(HOME)/.cabal
 
-
 PYTHON = python
+
+PANDOC = pandoc
 PFLAGS = -s -S
 PFLAGS += --read=markdown+east_asian_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
 PFLAGS += --toc
-PFLAGS += --list
+PFLAGS += --listings
 PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
 #PFLAGS += --filter $(CABAL)/bin/pandoc-include
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
@@ -70,7 +70,7 @@ merge: filtered
 filtered: tables
 	for src in $(SRC);do \
 		echo $$src; \
-		$(BUSYBOX) cat $$src | $(PYTHON) $(FILTER)  --out $(OUT)/f_$$src \
+		$(BUSYBOX) cat $$src | $(PYTHON) $(FILTER) --mode tex --out $(OUT)/f_$$src \
 	;done
 
 tables: $(CSV) mkdir
