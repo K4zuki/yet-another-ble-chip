@@ -28,6 +28,7 @@ chapter: true
 listings: true
 codeBlockCaptions: true
 listingTitle: 'List'
+listingTemplate: '---**$$listingTitle$$ $$i$$$$titleDelim$$ $$t$$**---'
 ...
 
 <!--
@@ -60,4 +61,5 @@ BLE ICであるDA1458xシリーズ^[DA14580/1/2/3 ただし582は2016年4月現�
 `2.3_use_mbed.md`{.include}
 `3.1_MyBestIdea.md`{.include}
 `4.1_i_made_it.md`{.include}
+`8.1_Appendix.md`{.include}
 `9.9_tail.md`{.include}
