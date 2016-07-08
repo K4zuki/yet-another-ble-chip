@@ -1,7 +1,7 @@
 ---
 title: もうひとつのBluetooth Low Energy ICでLEDを光らせる本
-author: "@_K4ZUKI_"
-date: C90/2016
+author: "KY技研 / @_K4ZUKI_"
+date: C90/2016-Aug
 documentclass: book
 papersize: b5paper
 comiket: "C90"
