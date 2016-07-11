@@ -1,9 +1,9 @@
-ext(LPC11U35) pin,ext function,SD pin,580 pin,580 function,flash pin
-P0_15,MOSI\ (ext as master),3,P0_4,MOSI(580 as master),SI(5)
-P0_19,UART RXD,$\Longleftarrow$,P0_4,TXD,NA
-P0_13,MISO\ (ext as master),7,P0_7,MISO(580 as master),SO(2)
-P0_14,SCK\ (ext as master),5,P0_5,SCK(580 as master),SCK(6)
-P0_18,UART TXD,$\Longrightarrow$,P0_5,RXD,NA
-P0_16,CS\ (ext as master),2,P1_0(580 as master),CS(580 as master),CS(1)
-P0_21,HIGH-active RESET,1,HIGH-active RESET,HIGH-active RESET,NA
-NA,external 6.8V source,8,VPP,VPP,NA
+ext(LPC11U35) pin,ext function,580 pin,580 function,flash pin
+P0_9,MOSI\ (ext as master),P0_7,MOSI(580 as master),SI(5)
+P0_19,UART RXD,P0_1,RXD,NA
+P0_7,MISO\ (ext as master),P0_3,MISO(580 as master),SO(2)
+P0_8,SCK\ (ext as master),P0_6,SCK(580 as master),SCK(6)
+P0_18,UART TXD,P0_0,TXD,NA
+P0_21,CS\ (ext as master),P0_6(580 as master),CS(580 as master),CS(1)
+P0_2,LO-active RESET,HIGH-active RESET,HIGH-active RESET,NA
+NA,external 6.8V source,VPP,VPP,NA
