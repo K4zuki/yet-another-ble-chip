@@ -86,7 +86,7 @@ mkdir:
 	mkdir -p $(OUT)
 
 clean:
-	rm -rf $(OUT)
+	rm -rf $(OUT)/*
 #	ls $(TABLES); if [ $$? -eq 0 ] ;then rm $(TABLES) ;fi
 #	ls $(FILTERED); if [ $$? -eq 0 ] ;then rm $(FILTERED) ;fi
 #	ls *_t.md; if [ $$? -eq 0 ] ;then rm *_t.md ;fi
