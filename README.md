@@ -66,5 +66,6 @@ BLE ICであるDA1458xシリーズ\
 `2.3_use_mbed.md`{.include}
 `3.1_MyBestIdea.md`{.include}
 `4.1_i_made_it.md`{.include}
+`5.1_LEDblinky.md`{.include}
 `8.1_Appendix.md`{.include}
 `9.9_tail.md`{.include}
