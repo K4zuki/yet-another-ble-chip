@@ -1,4 +1,4 @@
-PinName,WLCSP34\ ,QFN40,QFN48,Function\ ,Reset State\ ,Description
+PinName,WLCSP34,QFN40,QFN48,Function,Reset State,Description
 **[POWER]**,,,,,,
 VBAT3V,o,o,o,AIO,,3.0V battery connection. exclusive use with VBAT1V
 VBAT1V,o,o,o,AI,,1.5V battery connection. exclusive use with VBAT3V.
