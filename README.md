@@ -18,7 +18,7 @@ CJKoptions: BoldFont=RictyDiminished-Bold,
 CJKmainfont: RictyDiminished-Regular
 CJKsansfont: RictyDiminished-Regular
 CJKmonofont: RictyDiminished-Regular
-geometry: top=30truemm,bottom=30truemm,left=20truemm,right=20truemm
+geometry: top=30truemm,bottom=30truemm,left=15truemm,right=15truemm
 keywords: keyword
 secPrefix: Chapter
 linkcolor: black
