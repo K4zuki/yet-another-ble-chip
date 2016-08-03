@@ -12,7 +12,12 @@ PYTHON = python
 
 PANDOC = pandoc
 PFLAGS = -s -S
-PFLAGS += --read=markdown+east_asian_line_breaks+header_attributes+escaped_line_breaks+implicit_figures
+PFLAGS += --read=markdown+east_asian_line_breaks
+# +implicit_figures
+# +inline_code_attributes
+# +header_attributes
+# +escaped_line_breaks
+
 PFLAGS += --toc
 PFLAGS += --listings
 PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
