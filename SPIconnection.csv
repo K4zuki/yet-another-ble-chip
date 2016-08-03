@@ -1,9 +1,9 @@
 ext(LPC11U35) pin,ext function,580 pin,580 function,flash pin
-P0_9,MOSI(\*1),P0_7,MOSI(\*2),SI(5)
+P0_9,MOSI^\*1^,P0_7,MOSI^\*2^,SI(5)
 P0_19,UART RXD,P0_1,RXD,NA
-P0_7,MISO(\*1),P0_3,MISO(\*2),SO(2)
-P0_8,SCK(\*1),P0_6,SCK(\*2),SCK(6)
+P0_7,MISO^\*1^,P0_3,MISO^\*2^,SO(2)
+P0_8,SCK^\*1^,P0_6,SCK^\*2^,SCK(6)
 P0_18,UART TXD,P0_0,TXD,NA
-P0_21,CS(\*1),P0_2,CS(\*2),CS(1)
+P0_21,CS^\*1^,P0_2,CS^\*2^,CS(1)
 P0_2,LO-active RESET,HIGH-active RESET,HIGH-active RESET,NA
 NA,external 6.8V source,VPP,VPP,NA
