@@ -18,7 +18,7 @@ CJKoptions: BoldFont=RictyDiminished-Bold,
 CJKmainfont: RictyDiminished-Regular
 CJKsansfont: RictyDiminished-Regular
 CJKmonofont: RictyDiminished-Regular
-geometry: top=30truemm,bottom=30truemm,left=15truemm,right=15truemm
+geometry: top=30truemm,bottom=30truemm,left=20truemm,right=20truemm
 keywords: keyword
 secPrefix: Chapter
 linkcolor: black
@@ -42,10 +42,10 @@ localfontdir: ExternalLocation=/home/yamamoto/.local/share/fonts/
 
 Bluetooth(R) Low Energy ないしはBLEの機能を持ったIoTデバイスに採用されるICというと
 TI社とNordic社、
-さらにはKoshian^[www.m-pression.com/ja/solutions/boards/koshian]\
+さらにはKoshian^[www.m-pression.com/ja/solutions/boards/koshian]
 に採用されたBroadcom社の名前が挙がりますが、
 この本では、_筆者の個人的な理由_ からDialog Semiconductor社の
-BLE ICであるDA1458xシリーズ\
+BLE ICであるDA1458xシリーズ
 ^[DA14580/1/2/3 ただし582は2016年4月現在DigiKey.jpのリストに挙がっていない] の
 `DA14580`に注目し、同ICを採用しFCC/IC/TELEC認証を取得した村田製作所の
 アンテナ内蔵モジュール[^0.3.4]
