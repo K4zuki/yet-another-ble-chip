@@ -5,19 +5,19 @@ BASENAME = basename
 # if [ $(OSTYPE) -eq "msys"] ;then
 # HOME = "C:/Users/$(USERNAME)"
 # endif
-WHOME = "C:/Users/$(USERNAME)"
-HOME = $(if ($(OSTYPE) == msys),$(WHOME),$(HOME))
-# ifeq ($(OSTYPE),msys)
-# endif
+
+ifeq ($(OS),Windows_NT)
+		HOME = C:/Users/$(USERNAME)
+		CABAL = /c/Users/Kazuki/AppData/Roaming/cabal/
+		PCROSSREF = $(CABAL)/bin/pandoc-crossref.exe
+else
+		CABAL = $(HOME)/.cabal
+		PCROSSREF = $(CABAL)/bin/pandoc-crossref
+endif
 
 PANSTYLES = $(HOME)/.pandoc
 MISC = $(PANSTYLES)/pandoc_misc
 REF_DOCX = $(MISC)/ref.docx
-
-WCABAL = /c/Users/Kazuki/AppData/Roaming/cabal/
-# $(HOME)/.cabal
-CABAL = $(if ($(OSTYPE) == msys),$(WCABAL),$(HOME)/.cabal)
-
 PYTHON = python
 
 PANDOC = pandoc
@@ -28,7 +28,6 @@ PFLAGS += --read=markdown+east_asian_line_breaks
 # +header_attributes
 # +escaped_line_breaks
 
-PCROSSREF = $(if ($(OSTYPE) == msys),$(CABAL)/bin/pandoc-crossref.exe,$(CABAL)/bin/pandoc-crossref)
 PFLAGS += --toc
 PFLAGS += --listings
 # PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
@@ -45,22 +44,22 @@ MDSRC =  README.md
 # MDSRC += $(shell $(LS) 4.[01]*.md)
 # MDSRC += $(shell $(LS) 9.9*.md)
 
-#CSV2TABLE:= csv2mdtable.py
-#FILTER:= include.py
+# CSV2TABLE:= csv2mdtable.py
+# FILTER:= include.py
 CSV2TABLE := $(MISC)/csv2mdtable.py
 FILTER := $(MISC)/include.py
 
-#all md source files but fith f_ prefix
+# all md source files but fith f_ prefix
 SRC = $(filter-out f_%.md,$(MDSRC))
 
 OUT = ./Out
 # all f_*.md files
 FILTERED= $(addprefix $(OUT)/f_,$(SRC))
-#FILTERED := $(SRC:%=f_%)
+# FILTERED := $(SRC:%=f_%)
 
 CSV := $(shell $(LS) *.csv)
 TABLES := $(addprefix $(OUT)/,$(CSV:.csv=_t.md))
-#TABLES := $(CSV:.csv=_t.md)
+# TABLES := $(CSV:.csv=_t.md)
 
 TARGET = YetAnotherBLE
 
@@ -68,7 +67,7 @@ TARGET = YetAnotherBLE
 all: pdf
 
 html: merge
-	$(PANDOC) $(PFLAGS) --template=$(MISC)/github.html -thtml5 $(FILTERED) -o $(TARGET).html
+	$(PANDOC) $(PFLAGS) --template=$(MISC)/github.html -thtml5 $(FILTERED) -o $(OUT)/$(TARGET).html
 
 pdf: tex
 	xelatex --output-directory=$(OUT) --no-pdf $(OUT)/$(TARGET).tex; \
