@@ -2,11 +2,21 @@ BUSYBOX=
 LS = ls
 SH = bash
 BASENAME = basename
+# if [ $(OSTYPE) -eq "msys"] ;then
+# HOME = "C:/Users/$(USERNAME)"
+# endif
+WHOME = "C:/Users/$(USERNAME)"
+HOME = $(if ($(OSTYPE) == msys),$(WHOME),$(HOME))
+# ifeq ($(OSTYPE),msys)
+# endif
 
 PANSTYLES = $(HOME)/.pandoc
 MISC = $(PANSTYLES)/pandoc_misc
 REF_DOCX = $(MISC)/ref.docx
-CABAL = $(HOME)/.cabal
+
+WCABAL = /c/Users/Kazuki/AppData/Roaming/cabal/
+# $(HOME)/.cabal
+CABAL = $(if ($(OSTYPE) == msys),$(WCABAL),$(HOME)/.cabal)
 
 PYTHON = python
 
@@ -18,10 +28,11 @@ PFLAGS += --read=markdown+east_asian_line_breaks
 # +header_attributes
 # +escaped_line_breaks
 
+PCROSSREF = $(if ($(OSTYPE) == msys),$(CABAL)/bin/pandoc-crossref.exe,$(CABAL)/bin/pandoc-crossref)
 PFLAGS += --toc
 PFLAGS += --listings
-PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
-#PFLAGS += --filter $(CABAL)/bin/pandoc-include
+# PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
+PFLAGS += --filter $(PCROSSREF)
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
 PFLAGS += --reference-docx=$(REF_DOCX)
 
@@ -56,8 +67,8 @@ TARGET = YetAnotherBLE
 .PHONY: docx merge filtered tables tex pdf clean
 all: pdf
 
-docx: merge
-	$(PANDOC) $(PFLAGS) $(FILTERED) -o $(TARGET).docx
+html: merge
+	$(PANDOC) $(PFLAGS) --template=$(MISC)/github.html -thtml5 $(FILTERED) -o $(TARGET).html
 
 pdf: tex
 	xelatex --output-directory=$(OUT) --no-pdf $(OUT)/$(TARGET).tex; \
@@ -79,6 +90,8 @@ filtered: tables
 	;done
 
 tables: $(CSV) mkdir
+	echo $(HOME)
+	echo $(CABAL)
 	for csv in $(CSV);do \
 		echo $$csv; \
 		$(PYTHON) $(CSV2TABLE) --file $$csv \
