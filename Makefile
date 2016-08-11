@@ -7,33 +7,30 @@ BASENAME = basename
 # endif
 
 ifeq ($(OS),Windows_NT)
-		HOME = C:/Users/$(USERNAME)
-		CABAL = /c/Users/Kazuki/AppData/Roaming/cabal/
-		PCROSSREF = $(CABAL)/bin/pandoc-crossref.exe
+HOME = C:/Users/$(USERNAME)
+CABAL = /c/Users/Kazuki/AppData/Roaming/cabal/
+PCROSSREF = $(CABAL)/bin/pandoc-crossref.exe
 else
-		CABAL = $(HOME)/.cabal
-		PCROSSREF = $(CABAL)/bin/pandoc-crossref
+CABAL = $(HOME)/.cabal
+PCROSSREF = $(CABAL)/bin/pandoc-crossref
 endif
 
 PANSTYLES = $(HOME)/.pandoc
 MISC = $(PANSTYLES)/pandoc_misc
-REF_DOCX = $(MISC)/ref.docx
+# REF_DOCX = $(MISC)/ref.docx
 PYTHON = python
 
 PANDOC = pandoc
 PFLAGS = -s -S
 PFLAGS += --read=markdown+east_asian_line_breaks
-# +implicit_figures
-# +inline_code_attributes
-# +header_attributes
-# +escaped_line_breaks
+# +implicit_figures+inline_code_attributes+header_attributes+escaped_line_breaks
 
 PFLAGS += --toc
 PFLAGS += --listings
 # PFLAGS += --filter $(CABAL)/bin/pandoc-crossref
 PFLAGS += --filter $(PCROSSREF)
 PFLAGS += --smart --standalone --number-sections --highlight-style=pygments
-PFLAGS += --reference-docx=$(REF_DOCX)
+# PFLAGS += --reference-docx=$(REF_DOCX)
 
 MDSRC =  README.md
 # MDSRC += $(shell $(LS) 0.[234]*.md)
@@ -67,7 +64,7 @@ TARGET = YetAnotherBLE
 all: pdf
 
 html: merge
-	$(PANDOC) $(PFLAGS) --template=$(MISC)/github.html -thtml5 $(FILTERED) -o $(OUT)/$(TARGET).html
+	$(PANDOC) $(PFLAGS) -thtml5 --template=$(MISC)/github.html $(OUT)/$(TARGET).md -o $(OUT)/$(TARGET).html
 
 pdf: tex
 	xelatex --output-directory=$(OUT) --no-pdf $(OUT)/$(TARGET).tex; \
