@@ -8,7 +8,7 @@ BASENAME = basename
 
 ifeq ($(OS),Windows_NT)
 HOME = C:/Users/$(USERNAME)
-CABAL = /c/Users/Kazuki/AppData/Roaming/cabal/
+CABAL = C:/Users/Kazuki/AppData/Roaming/cabal
 PCROSSREF = $(CABAL)/bin/pandoc-crossref.exe
 else
 CABAL = $(HOME)/.cabal
