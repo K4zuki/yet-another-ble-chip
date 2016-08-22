@@ -1,0 +1,3 @@
+[submodule "submodule/da14580sdk"]
+	path = submodule/da14580sdk
+	url = https://github.com/K4zuki/da14580sdk.git
