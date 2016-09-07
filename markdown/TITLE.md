@@ -1,14 +1,15 @@
 ---
-title: 改訂 もうひとつのBluetooth Low Energy ICでLEDを光らせる本
+title: 改訂：もうひとつのBluetooth Low Energy ICでLEDを光らせる本
 author: "KY技研 / @_K4ZUKI_"
+abstract: Dialog Semiconductor社のBluetooth(R)LE搭載マイクロコントローラで
+  Lチカしてみた
 date: C91/2016-Dec
 documentclass: book
 papersize: b5paper
 comiket: "C91"
 year: "2016"
 publisher: "秋葉原キンコーズ"
-# localfontdir: ExternalLocation=/usr/local/texlive/2015basic/texmf-local/
-# localfontdir: ExternalLocation = /usr/local/share/texmf/fonts/
+# localfontdir: set during compilation
 mainfont: RictyDiminished-Regular
 sansfont: RictyDiminished-Regular
 monofont: RictyDiminished-Regular
@@ -38,7 +39,7 @@ localfontdir: ExternalLocation=/home/yamamoto/.local/share/fonts/
 -->
 
 # まえがき {.unnumbered}
-このドキュメントは、Dialog社のBluetooth Low Energy IC `DA14580` を使った作品で、
+このドキュメントは、Dialog社のBluetooth Low Energy IC **`DA14580`** を使った作品で、
 *Lチカをするにはどうすればよいか* を解説する本です。  
 
 Bluetooth(R) Low Energy ないしはBLEの機能を持ったIoTデバイスに採用されるICというと
@@ -48,7 +49,7 @@ TI社とNordic社、
 この本では、_筆者の個人的な理由_ からDialog Semiconductor社の
 BLE ICであるDA1458xシリーズ
 ^[DA14580/1/2/3 ただし582は2016年8月現在DigiKey.jpのリストに挙がっていない] の
-`DA14580`に注目し、同ICを採用しFCC/IC/TELEC認証を取得した村田製作所の
+**`DA14580`** に注目し、同ICを採用しFCC/IC/TELEC認証を取得した村田製作所の
 アンテナ内蔵モジュール[^0.3.4]
 を試食しました。
 
@@ -62,17 +63,17 @@ BLE ICであるDA1458xシリーズ
 | **電波飛びません** |
 
 
-`markdown/0.2_who_would_read_this.md`{.include}
+<!-- `markdown/0.2_who_would_read_this.md`{.include}
 `markdown/0.3_warnings.md`{.include}
 `markdown/0.4_references.md`{.include}
 `markdown/1.0_da14580more_detail.md`{.include}
 `markdown/2.0_DevelopEnvironment.md`{.include}
 `markdown/2.1_ArmCoreEnv.md`{.include}
-`markdown/2.2_DialogSmartSnippets.md`{.include}
+`markdown/2.2_DialogSmartSnippets.md`{.include} -->
 `markdown/2.3_use_mbed.md`{.include}
-`markdown/3.1_MyBestIdea.md`{.include}
+<!-- `markdown/3.1_MyBestIdea.md`{.include}
 `markdown/4.1_i_made_it.md`{.include}
 `markdown/5.1_LEDblinky.md`{.include}
 `markdown/8.1_Appendix.md`{.include}
 `markdown/9.1_RevHistory.md`{.include}
-`markdown/9.9_tail.md`{.include}
+`markdown/9.9_tail.md`{.include} -->
