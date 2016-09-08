@@ -57,6 +57,6 @@ mkdir:
 	mkdir -p $(MDDIR)
 
 clean: mkdir
-	rm images/*_r????.png
+	# rm images/*_r????.png
 	rm -rf $(TARGETDIR)
 	mkdir -p $(TARGETDIR)
