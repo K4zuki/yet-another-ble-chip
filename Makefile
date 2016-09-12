@@ -18,6 +18,7 @@ PANFLAGS += --toc
 PANFLAGS += --listings
 PANFLAGS += --number-sections --highlight-style=pygments
 PANFLAGS += -M localfontdir=$(FONTDIR)
+PANFLAGS += -M css=$(MISC)/github_css/github.css
 
 .PHONY: docx merge filtered tables tex pdf clean
 
@@ -30,17 +31,19 @@ $(HTML): $(TABLES) $(FILTERED)
 		$(FILTERED) -o $(HTML)
 
 pdf: tex
-	xelatex --output-directory=$(TARGETDIR) --no-pdf $(TARGETDIR)/$(TARGET).tex; \
 	cd $(TARGETDIR); \
 	rm -f ./images; \
 	ln -s ../images; \
 	xelatex $(TARGET).tex
 
-tex: merge
+tex: merge $(TARGETDIR)/$(TARGET).tex
+$(TARGETDIR)/$(TARGET).tex:
 	$(PANDOC) $(PANFLAGS) --template=$(MISC)/CJK_xelatex.tex --latex-engine=xelatex \
-		$(TARGETDIR)/$(TARGET).md -o $(TARGETDIR)/$(TARGET).tex
+		$(TARGETDIR)/$(TARGET).md -o $(TARGETDIR)/$(TARGET).tex; \
+	xelatex --output-directory=$(TARGETDIR) --no-pdf $(TARGETDIR)/$(TARGET).tex
 
-merge: filtered
+merge: filtered $(TARGETDIR)/$(TARGET).md
+$(TARGETDIR)/$(TARGET).md:
 	cat $(FILTERED) > $(TARGETDIR)/$(TARGET).md
 
 filtered: tables $(FILTERED)
