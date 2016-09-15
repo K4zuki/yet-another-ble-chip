@@ -1,15 +1,18 @@
 ---
 title: 改訂：もうひとつのBluetooth Low Energy ICでLEDを光らせる本
-author: "KY技研 / @_K4ZUKI_"
 abstract: Dialog Semiconductor社のBluetooth(R)LE搭載マイクロコントローラで
   Lチカしてみた
+circle: KY技研
+author: "@_K4ZUKI_"
 date: C91/2016-Dec
-documentclass: book
-papersize: b5paper
 comiket: "C91"
 year: "2016"
-publisher: "秋葉原キンコーズ"
-# localfontdir: set during compilation
+publisher: 秋葉原キンコーズで再び印刷製本
+docrevision: "1.1"
+short-hash: (git short hash)
+
+documentclass: book
+papersize: b5paper
 mainfont: RictyDiminished-Regular
 sansfont: RictyDiminished-Regular
 monofont: RictyDiminished-Regular
@@ -75,5 +78,5 @@ BLE ICであるDA1458xシリーズ
 `markdown/4.1_i_made_it.md`{.include}
 `markdown/5.1_LEDblinky.md`{.include}
 `markdown/8.1_Appendix.md`{.include}
-`markdown/9.1_RevHistory.md`{.include}
-`markdown/9.9_tail.md`{.include} -->
+`markdown/9.1_RevHistory.md`{.include} -->
+<!-- `markdown/9.9_tail.md`{.include} -->

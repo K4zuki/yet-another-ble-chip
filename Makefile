@@ -18,6 +18,8 @@ PANFLAGS += --toc
 PANFLAGS += --listings
 PANFLAGS += --number-sections --highlight-style=pygments
 PANFLAGS += -M localfontdir=$(FONTDIR)
+PANFLAGS += -M short-hash=`git rev-parse --short HEAD`
+PANFLAGS += -M tables=true
 
 .PHONY: docx merge filtered tables tex pdf clean
 
