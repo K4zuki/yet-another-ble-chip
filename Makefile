@@ -19,6 +19,8 @@ PANFLAGS += --listings
 PANFLAGS += --number-sections --highlight-style=pygments
 PANFLAGS += -M localfontdir=$(FONTDIR)
 PANFLAGS += -M css=$(MISC)/github_css/github.css
+PANFLAGS += -M short-hash=`git rev-parse --short HEAD`
+PANFLAGS += -M tables=true
 
 MARKDOWN = $(shell ls $(MDDIR)/*.md)
 
