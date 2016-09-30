@@ -20,9 +20,11 @@ PANFLAGS += --number-sections --highlight-style=pygments
 PANFLAGS += -M localfontdir=$(FONTDIR)
 PANFLAGS += -M css=$(MISC)/github_css/github.css
 
+MARKDOWN = $(shell ls $(MDDIR)/*.md)
+
 .PHONY: docx merge filtered tables tex pdf clean
 
-all: pdf
+all: mkdir html
 
 html: $(HTML)
 
@@ -47,7 +49,7 @@ $(TARGETDIR)/$(TARGET).md:
 	cat $(FILTERED) > $(TARGETDIR)/$(TARGET).md
 
 filtered: tables $(FILTERED)
-$(FILTERED): $(MDDIR)/$(INPUT)
+$(FILTERED): $(MDDIR)/$(INPUT) $(MARKDOWN) $(TABLES)
 	cat $< | $(PYTHON) $(FILTER) --mode tex --out $@
 
 tables: $(TABLES)

@@ -4,12 +4,12 @@ author: "KY技研 / @_K4ZUKI_"
 abstract: Dialog Semiconductor社のBluetooth(R)LE搭載マイクロコントローラで
   Lチカしてみた
 date: C91/2016-Dec
-documentclass: book
-papersize: b5paper
 comiket: "C91"
 year: "2016"
 publisher: "秋葉原キンコーズ"
-# localfontdir: set during compilation
+
+documentclass: book
+papersize: b5paper
 mainfont: RictyDiminished-Regular
 sansfont: RictyDiminished-Regular
 monofont: RictyDiminished-Regular
@@ -63,17 +63,17 @@ BLE ICであるDA1458xシリーズ
 | **電波飛びません** |
 
 
-<!-- `markdown/0.2_who_would_read_this.md`{.include}
+`markdown/0.2_who_would_read_this.md`{.include}
 `markdown/0.3_warnings.md`{.include}
 `markdown/0.4_references.md`{.include}
 `markdown/1.0_da14580more_detail.md`{.include}
 `markdown/2.0_DevelopEnvironment.md`{.include}
 `markdown/2.1_ArmCoreEnv.md`{.include}
-`markdown/2.2_DialogSmartSnippets.md`{.include} -->
+`markdown/2.2_DialogSmartSnippets.md`{.include}
 `markdown/2.3_use_mbed.md`{.include}
-<!-- `markdown/3.1_MyBestIdea.md`{.include}
+`markdown/3.1_MyBestIdea.md`{.include}
 `markdown/4.1_i_made_it.md`{.include}
 `markdown/5.1_LEDblinky.md`{.include}
 `markdown/8.1_Appendix.md`{.include}
 `markdown/9.1_RevHistory.md`{.include}
-`markdown/9.9_tail.md`{.include} -->
+`markdown/9.9_tail.md`{.include}
