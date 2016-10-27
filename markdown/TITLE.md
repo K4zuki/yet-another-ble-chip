@@ -43,7 +43,7 @@ localfontdir: ExternalLocation=/home/yamamoto/.local/share/fonts/
 
 # まえがき {.unnumbered}
 このドキュメントは、Dialog社のBluetooth Low Energy IC **`DA14580`** を使った作品で、
-*Lチカをするにはどうすればよいか* を解説する本です。  
+*Lチカをするにはどうすればよいか* を解説する本です。
 
 Bluetooth(R) Low Energy ないしはBLEの機能を持ったIoTデバイスに採用されるICというと
 TI社とNordic社、
@@ -66,17 +66,17 @@ BLE ICであるDA1458xシリーズ
 | **電波飛びません** |
 
 
-<!-- `markdown/0.2_who_would_read_this.md`{.include}
+`markdown/0.2_who_would_read_this.md`{.include}
 `markdown/0.3_warnings.md`{.include}
 `markdown/0.4_references.md`{.include}
 `markdown/1.0_da14580more_detail.md`{.include}
 `markdown/2.0_DevelopEnvironment.md`{.include}
 `markdown/2.1_ArmCoreEnv.md`{.include}
-`markdown/2.2_DialogSmartSnippets.md`{.include} -->
+`markdown/2.2_DialogSmartSnippets.md`{.include}
 `markdown/2.3_use_mbed.md`{.include}
-<!-- `markdown/3.1_MyBestIdea.md`{.include}
+`markdown/3.1_MyBestIdea.md`{.include}
 `markdown/4.1_i_made_it.md`{.include}
 `markdown/5.1_LEDblinky.md`{.include}
 `markdown/8.1_Appendix.md`{.include}
-`markdown/9.1_RevHistory.md`{.include} -->
+`markdown/9.1_RevHistory.md`{.include}
 <!-- `markdown/9.9_tail.md`{.include} -->
