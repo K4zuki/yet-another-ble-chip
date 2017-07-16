@@ -6,10 +6,12 @@ HOME = C:/Users/$(USERNAME)
 CABAL = $(HOME)/AppData/Roaming/cabal
 PCROSSREF = $(CABAL)/bin/pandoc-crossref.exe
 PANDOC:= $(CABAL)/bin/pandoc.exe
+GPP = /usr/bin/gpp
 else
 CABAL = $(HOME)/.cabal
 PCROSSREF = $(CABAL)/bin/pandoc-crossref
 PANDOC:= $(CABAL)/bin/pandoc
+GPP = /usr/local/bin/gpp
 ifeq ($(shell uname),Linux)
 FONTDIR = "ExternalLocation = /usr/local/share/texmf/fonts/"
 else
@@ -32,6 +34,12 @@ PANFLAGS= -s -S
 PANFLAGS += --read=markdown+east_asian_line_breaks
 # +implicit_figures+inline_code_attributes+header_attributes+escaped_line_breaks
 PANFLAGS += --filter $(PCROSSREF)
+
+GPPFLAGS = -H +c "<!--" "-->"
+GPPFLAGS += -I$(MDDIR)
+GPPFLAGS += -I$(DATADIR)
+GPPFLAGS += -I$(TARGETDIR)
+GPPFLAGS += -Ipanflute
 
 PYTHON= python3
 CSV2TABLE= $(MISC)/csv2mdtable.py

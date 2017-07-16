@@ -52,7 +52,7 @@ $(TARGETDIR)/$(TARGET).md:
 
 filtered: tables $(FILTERED)
 $(FILTERED): $(MDDIR)/$(INPUT) $(MARKDOWN) $(TABLES)
-	cat $< | $(PYTHON) $(FILTER) --mode tex --out $@
+	$(GPP) $(GPPFLAGS) $< | $(PYTHON) $(FILTER) - --mode tex --out $@
 
 tables: $(TABLES)
 $(TARGETDIR)/%.tmd: $(DATADIR)/%.csv
