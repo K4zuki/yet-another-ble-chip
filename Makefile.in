@@ -33,7 +33,7 @@ PANFLAGS += --read=markdown+east_asian_line_breaks
 # +implicit_figures+inline_code_attributes+header_attributes+escaped_line_breaks
 PANFLAGS += --filter $(PCROSSREF)
 
-PYTHON= python
+PYTHON= python3
 CSV2TABLE= $(MISC)/csv2mdtable.py
 FILTER= $(MISC)/include.py
 DOCXPWRTR:=
