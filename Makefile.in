@@ -11,11 +11,13 @@ else
 CABAL = $(HOME)/.cabal
 PCROSSREF = $(CABAL)/bin/pandoc-crossref
 PANDOC:= $(CABAL)/bin/pandoc
-GPP = /usr/local/bin/gpp
+PANTABLE = /usr/local/bin/pantable
 ifeq ($(shell uname),Linux)
 FONTDIR = "ExternalLocation = /usr/local/share/texmf/fonts/"
+GPP = /usr/bin/gpp
 else
 FONTDIR = "ExternalLocation = /usr/local/texlive/2015basic/texmf-local/"
+GPP = /usr/local/bin/gpp
 endif
 endif
 
@@ -30,10 +32,18 @@ SVN=
 SVNDIR=
 REPO= ${PWD##*/}
 
-PANFLAGS= -s -S
-PANFLAGS += --read=markdown+east_asian_line_breaks
-# +implicit_figures+inline_code_attributes+header_attributes+escaped_line_breaks
-PANFLAGS += --filter $(PCROSSREF)
+PANFLAGS = --read=markdown+east_asian_line_breaks
+# PANFLAGS += --filter=$(MISC)/panflute/rotateimg.py
+# PANFLAGS += --filter=$(MFILTER)
+PANFLAGS += --filter=$(PANTABLE)
+PANFLAGS += --filter=$(PCROSSREF)
+PANFLAGS += --toc
+PANFLAGS += --listings
+PANFLAGS += --number-sections --highlight-style=pygments
+PANFLAGS += -M localfontdir=$(FONTDIR)
+PANFLAGS += -M css=$(MISC)/github_css/github.css
+PANFLAGS += -M short-hash=`git rev-parse --short HEAD`
+PANFLAGS += -M tables=true
 
 GPPFLAGS = -H +c "<!--" "-->"
 GPPFLAGS += -I$(MDDIR)
