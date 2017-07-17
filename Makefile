@@ -14,14 +14,6 @@ HTML:=$(TARGETDIR)/$(TARGET).html
 DOCX:=$(TARGETDIR)/$(TARGET).docx
 PDF:=	$(TARGETDIR)/$(TARGET).pdf
 
-PANFLAGS += --toc
-PANFLAGS += --listings
-PANFLAGS += --number-sections --highlight-style=pygments
-PANFLAGS += -M localfontdir=$(FONTDIR)
-PANFLAGS += -M css=$(MISC)/github_css/github.css
-PANFLAGS += -M short-hash=`git rev-parse --short HEAD`
-PANFLAGS += -M tables=true
-
 MARKDOWN = $(shell ls $(MDDIR)/*.md)
 
 .PHONY: docx merge filtered tables tex pdf clean
@@ -52,7 +44,7 @@ $(TARGETDIR)/$(TARGET).md:
 
 filtered: tables $(FILTERED)
 $(FILTERED): $(MDDIR)/$(INPUT) $(MARKDOWN) $(TABLES)
-	cat $< | $(PYTHON) $(FILTER) --mode tex --out $@
+	$(GPP) $(GPPFLAGS) $< | $(PYTHON) $(FILTER) - --mode tex --out $@
 
 tables: $(TABLES)
 $(TARGETDIR)/%.tmd: $(DATADIR)/%.csv
