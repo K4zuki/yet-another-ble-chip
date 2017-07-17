@@ -9,7 +9,7 @@ TARGET = YetAnotherBLE
 OUTPUT:= $(shell basename $(TARGET) .md)
 CSV:= $(shell cd $(DATADIR); ls *.csv)
 TABLES:= $(CSV:%.csv=$(TARGETDIR)/%.tmd)
-FILTERED= $(INPUT:%.md=$(TARGETDIR)/%.fmd)
+FILTERED= $(INPUT:%.md=$(TARGETDIR)/%.md)
 HTML:=$(TARGETDIR)/$(TARGET).html
 DOCX:=$(TARGETDIR)/$(TARGET).docx
 PDF:=	$(TARGETDIR)/$(TARGET).pdf
